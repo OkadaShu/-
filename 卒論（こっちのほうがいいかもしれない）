@@ -9,7 +9,10 @@
 % 章が進むごとに図番号をリセットする
 \@addtoreset{figure}{subsection}
 \@addtoreset{table}{section}
-
+\renewcommand{\theequation}{% 式番号の付け方
+	\thesection.\arabic{equation}}
+	\@addtoreset{equation}{section}
+  
 \makeatother % プリアンブルで定義終了
 
 \renewcommand{\headfont}{\bfseries} %章タイトルなどを明朝体にする
