@@ -1,0 +1,96 @@
+\documentclass[a4j,11pt]{jsarticle}
+\usepackage{semi}
+\usepackage{breqn}
+\usepackage{tabularx}
+\usepackage{listings,jlisting}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\newcolumntype{Y}{&gt;{\centering\arraybackslash}X} %中央揃え
+ 
+\makeatletter % プリアンブルで定義開始
+
+% 図番号を"<章節などの番号番号> - <図番号>" へ
+\renewcommand{\thefigure}{\thesubsection-\arabic{figure}}
+\renewcommand{\thetable}{\thesubsection-\arabic{table}}
+% 章が進むごとに図番号をリセットする
+\@addtoreset{figure}{subsection}
+\@addtoreset{table}{section}
+\renewcommand{\theequation}{% 式番号の付け方
+	\thesection.\arabic{equation}}
+	\@addtoreset{equation}{section}
+\makeatother % プリアンブルで定義終了
+
+\renewcommand{\headfont}{\bfseries} %章タイトルなどを明朝体にする
+
+\makeindex
+\begin{document}
+\definecolor{cellcolor}{rgb}{ 1, .90, .90}
+\definecolor{rowcolor}{rgb}{.85, .85, 1}
+\setcounter{tocdepth}{3}
+\thispagestyle{empty}
+\clearpage
+\addtocounter{page}{-1}
+\begin{center}
+
+\huge
+2020年度　卒業論文\\[60pt]
+\HUGE
+逆畳込みとケプストラム法を\\
+組み合わせることによる\\
+残響除去の提案\\[65pt]
+\huge
+指導教員 須田 宇宙 准教授\\[40pt]
+千葉工業大学 情報ネットワーク学科\\[10pt]
+須田研究室\\[40pt]
+1632038 \hspace{70pt} 岡田　秀\\[110pt]
+\end{center}
+\begin{flushright} 
+\huge
+
+\textcolor{white}{文字}
+
+\textcolor{white}{文字}
+
+提出日 2020年1月24日
+\end{flushright}
+\newpage
+\thispagestyle{empty}
+\clearpage
+\addtocounter{page}{-1}
+\large
+% 目次
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+\addtocounter{page}{-1}
+\newpage
+%表目次
+\listoftables
+%図目次
+\listoffigures
+\thispagestyle{empty}
+\clearpage
+\addtocounter{page}{-1}
+\begin{comment}
+
+\end{comment}
+\newpage
+\end{document}
